@@ -33,7 +33,7 @@ class Login extends React.PureComponent {
         const {username, password} = this.state;
         const {login} = this.props;
         login(username, password);
-        history.push('');
+        history.push('/');
     }
 
     render() {
@@ -48,18 +48,18 @@ class Login extends React.PureComponent {
                         <FormGroup row>
                             <Label for="username" sm={2}>Username</Label>
                             <Col sm={10}>
-                                <Input type="text" name="username" id="username" onChange={(e) => this.onChange(e)}/>
+                                <Input type="text" name="username" id="username" onChange={e => this.onChange(e)}/>
                             </Col>
                         </FormGroup>
                         <FormGroup row>
                             <Label for="password" sm={2}>Password</Label>
                             <Col sm={10}>
                                 <Input type="password" name="password" id="password"
-                                       onChange={(e) => this.onChange(e)}/>
+                                       onChange={e => this.onChange(e)}/>
                             </Col>
                         </FormGroup>
-                        <div className='d-flex'>
-                            <Button className="button btn-success align-items-center m-auto"
+                        <div className='d-flex justify-content-center'>
+                            <Button className="button btn-success align-items-center"
                                     disabled={!(username && password)}
                                     type="submit">Login</Button>
                         </div>
